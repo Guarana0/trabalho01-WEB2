@@ -1,27 +1,26 @@
 <?php require 'requires/header.php'; ?>
 
-<div class="container mt-4" style="max-width: 1000px;">
+<div class="container-fluid mt-4 style="max-width: 1200px;">
 
     <div id="carouselSimples" class="carousel slide" data-bs-ride="carousel">
 
         <div class="carousel-inner">
 
             <div class="carousel-item active">
-                <img src="imagens/Salvador_img.jpg" class="d-block w-100" style="height: 300px; object-fit: cover;">
+                <img src="imagens/Salvador_img.jpg" class="d-block w-100" style="height: 450px; object-fit: cover;">
             </div>
 
             <div class="carousel-item">
-                <img src="imagens/Rio_img.jpg" class="d-block w-100" style="height: 300px; object-fit: cover;">
+                <img src="imagens/Rio_img.jpg" class="d-block w-100" style="height: 450px; object-fit: cover;">
             </div>
 
             <div class="carousel-item">
-                <img src="imagens/Amazonas_img.jpg" class="d-block w-100" style="height: 300px; object-fit: cover;">
+                <img src="imagens/Amazonas_img.jpg" class="d-block w-100" style="height: 450px; object-fit: cover;">
             </div>
 
-              <div class="carousel-item">
-                <img src="imagens/Gramado_img.jpg" class="d-block w-100" style="height: 300px; object-fit: cover;">
+            <div class="carousel-item">
+                <img src="imagens/Gramado_img.jpg" class="d-block w-100" style="height: 450px; object-fit: cover;">
             </div>
-
 
         </div>
 
