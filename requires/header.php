@@ -11,14 +11,14 @@
     <!-- Degradê personalizado -->
     <style>
       .degrade-navbar {
-        background: linear-gradient(90deg, #100124, #8223fd);
+        background: linear-gradient(90deg, #3c8ffc, #130163);
       }
     </style>
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark degrade-navbar py-4 shadow">
+<nav class="navbar navbar-expand-lg navbar-dark degrade-navbar py-5 shadow">
   <div class="container">
     
     <!-- Logo e o nome da empresa (vamos decidir ainda) -->
