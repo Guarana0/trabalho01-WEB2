@@ -36,6 +36,17 @@
 
 </div>
 
+<div class="container mt-4 text-center">
+
+  <h2 class="mb-4">Filtrar por categoria</h2>
+
+  <a href="index.php" class="btn btn-outline-dark m-1">Todos</a>
+  <a href="index.php?categoria=praia" class="btn btn-outline-primary m-1">Praia</a>
+  <a href="index.php?categoria=cidade" class="btn btn-outline-primary m-1">Cidade</a>
+  <a href="index.php?categoria=floresta" class="btn btn-outline-primary m-1">Natureza</a>
+
+</div>
+
 <div class="container mt-5">
 
   <h2 class="text-center mb-4">Pacotes de Viagem</h2>

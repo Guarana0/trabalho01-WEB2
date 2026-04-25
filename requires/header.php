@@ -11,7 +11,7 @@
     <!-- Degradê personalizado -->
     <style>
       .degrade-navbar {
-        background: linear-gradient(90deg, #3c8ffc, #130163);
+        background: linear-gradient(90deg, #67a8fd, #0e0242);
       }
     </style>
 </head>
@@ -21,10 +21,17 @@
 <nav class="navbar navbar-expand-lg navbar-dark degrade-navbar py-5 shadow">
   <div class="container">
     
-    <!-- Logo e o nome da empresa (vamos decidir ainda) -->
-    <a class="navbar-brand fs-2 fw-bold" href="index.php">
-       Sem nome
-    </a>
+    <!-- Logo e o nome da empresa agora se chama CEFETUR -->
+   <a class="navbar-brand d-flex align-items-center fw-bold" href="index.php">
+  <img src="imagens/logo.png" 
+       alt="Cefetur" 
+       width="90" height="90"
+       class="me-3 rounded-circle object-fit-cover">
+
+  <span style="font-size: 32px; letter-spacing: 1px; color: #f8f9fa;">
+    CEFETUR
+  </span>
+</a>
 
     <!-- Div pai com todos os links e botaoes da nav dentro-->
     <div class="collapse navbar-collapse" id="menu">
