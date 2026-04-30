@@ -66,7 +66,7 @@ if (!$pacote) {
           <input type="number" name="quantidade" class="form-control" min="1" required>
         </div>
 
-        <button class="btn btn-success w-100"
+        <button type="submit" class="btn btn-success w-100" 
           <?= $pacote['disponivel'] == 0 ? 'disabled' : '' ?>>
           Reservar
         </button>
