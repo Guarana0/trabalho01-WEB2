@@ -14,10 +14,35 @@ foreach ($pacotes as $p) {
 }
 
 if (!$pacote) {
-//por enquanto o footer ainda esta quebrado nessa parte (vou corrigir depois)
   echo "<div class='container mt-5'><h3>Pacote não encontrado</h3></div>";
   require '../requires/footer.php';
- exit;
+  exit;
+}
+
+// VARIÁVEIS DE CONTROLE
+$erroData = "";
+$dados = $_POST ?? [];
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $inicio = $_POST['data_inicio'] ?? '';
+  $fim = $_POST['data_fim'] ?? '';
+
+
+  #esse if é composto por 2 partes primeiro ele garante que o inicio e o fim existem
+  #Depois ele verifica se a data inicial é maior q a final 
+  if ($inicio && $fim && $inicio > $fim) {
+    $erroData = "A data de início deve ser antes da data de término.";
+  } else {
+    #se estiver tudo ok e a datade inicio for menor que a data do fim o formulario direciona o usuario
+    #para a pagina de resultado 
+
+    //header() é uma função do PHP que envia instruções (cabeçalhos HTTP) para o navegador.
+    //E um redirecionamento automatico 
+    header("Location: resultado.php");
+
+    //Evita que o resto da página continue executando
+    exit;
+  }
 }
 ?>
 
@@ -51,19 +76,48 @@ if (!$pacote) {
 
       <hr>
 
+      <!-- ERRO -->
+      <?php if (!empty($erroData)): ?>
+        <div class="alert alert-danger">
+          <?= $erroData ?>
+        </div>
+      <?php endif; ?>
+
       <!-- FORM -->
-      <form action="resultado.php" method="POST">
+      <form method="POST">
 
         <input type="hidden" name="id" value="<?= $pacote['id'] ?>">
 
         <div class="mb-3">
           <label>Nome</label>
-          <input type="text" name="nome" class="form-control" required>
+          <input type="text" name="nome" class="form-control" required
+            value="<?= htmlspecialchars($dados['nome'] ?? '') ?>">
         </div>
 
         <div class="mb-3">
           <label>Quantidade</label>
-          <input type="number" name="quantidade" class="form-control" min="1" required>
+          <input type="number" name="quantidade" class="form-control" min="1" required
+            value="<?= htmlspecialchars($dados['quantidade'] ?? '') ?>">
+        </div>
+
+        <!-- DATA INICIO -->
+        <div class="mb-3">
+          <label>Data de início</label>
+          <input type="date" name="data_inicio" class="form-control" required
+            value="<?= htmlspecialchars($dados['data_inicio'] ?? '') ?>">
+        </div>
+
+        <!-- DATA FIM -->
+        <div class="mb-3">
+          <label>Data de término</label>
+          <input type="date" name="data_fim" class="form-control" required
+            value="<?= htmlspecialchars($dados['data_fim'] ?? '') ?>">
+        </div>
+
+        <!-- OBSERVAÇÃO -->
+        <div class="mb-3">
+          <label>Observações</label>
+          <textarea name="observacoes" class="form-control" rows="3"><?= htmlspecialchars($dados['observacoes'] ?? '') ?></textarea>
         </div>
 
         <button type="submit" class="btn btn-success w-100" 

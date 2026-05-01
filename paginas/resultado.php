@@ -7,6 +7,11 @@ $idBuscado   = $_POST['id'] ?? null;
 $nomeUsuario = $_POST['nome'] ?? 'Cliente';
 $qtd         = (int)($_POST['quantidade'] ?? 0); //so pra garantir que vai ser int
 
+// NOVOS CAMPOS
+$dataInicio = $_POST['data_inicio'] ?? '';
+$dataFim = $_POST['data_fim'] ?? '';
+$observacoes = $_POST['observacoes'] ?? '';
+
 //inicialização prévia para evitar problemas
 $pacoteEncontrado = null;
 $reservaConfirmada = false;
@@ -61,6 +66,16 @@ if ($pacoteEncontrado) {
                 <hr>
                 <p><strong>Vagas reservadas:</strong> <?= $qtd ?></p>
                 <p><strong>Valor Total:</strong> R$ <?= number_format($pacoteEncontrado['valor'] * $qtd, 2, ',', '.') ?></p>
+
+                <!-- NOVAS INFORMAÇÕES -->
+                <p><strong>Data de início:</strong> <?= date('d/m/Y', strtotime($dataInicio)) ?></p>
+                <p><strong>Data de término:</strong> <?= date('d/m/Y', strtotime($dataFim)) ?></p>
+
+                <?php if (!empty($observacoes)): ?>
+                    <p><strong>Observações:</strong><br>
+                    <?= nl2br(htmlspecialchars($observacoes)) ?></p>
+                <?php endif; ?>
+
                 <p class="text-muted">Estoque atualizado: <?= $pacoteEncontrado['disponivel'] ?> vagas restantes.</p>
                 <br>
                 <a href="../index.php" class="btn btn-primary">Voltar ao Início</a>
