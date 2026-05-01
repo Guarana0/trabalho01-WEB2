@@ -1,16 +1,19 @@
 <?php
+session_start(); // Inicia a sessão para ler os dados vindos de detalhes.php
 require_once '../dados.php';
 require_once '../requires/header.php';
 
+// Recuperamos os dados da sessão
+$dadosSessao = $_SESSION['dados_reserva'] ?? [];
 
-$idBuscado   = $_POST['id'] ?? null;
-$nomeUsuario = $_POST['nome'] ?? 'Cliente';
-$qtd         = (int)($_POST['quantidade'] ?? 0); //so pra garantir que vai ser int
+$idBuscado   = $dadosSessao['id'] ?? null;
+$nomeUsuario = $dadosSessao['nome'] ?? 'Cliente';
+$qtd         = (int)($dadosSessao['quantidade'] ?? 0); //so pra garantir que vai ser int
 
 // NOVOS CAMPOS
-$dataInicio = $_POST['data_inicio'] ?? '';
-$dataFim = $_POST['data_fim'] ?? '';
-$observacoes = $_POST['observacoes'] ?? '';
+$dataInicio = $dadosSessao['data_inicio'] ?? '';
+$dataFim = $dadosSessao['data_fim'] ?? '';
+$observacoes = $dadosSessao['observacoes'] ?? '';
 
 //inicialização prévia para evitar problemas
 $pacoteEncontrado = null;
@@ -47,6 +50,9 @@ if ($pacoteEncontrado) {
         file_put_contents('../dados.php', $conteudo);
         
         $reservaConfirmada = true;
+        
+        // Limpa a sessão após o sucesso para evitar reservas duplicadas ao atualizar a página
+        unset($_SESSION['dados_reserva']);
     } else {
         $erroEstoque = "Quantidade solicitada ($qtd) indisponível. Temos apenas {$pacoteEncontrado['disponivel']} vagas.";
     }
@@ -68,8 +74,8 @@ if ($pacoteEncontrado) {
                 <p><strong>Valor Total:</strong> R$ <?= number_format($pacoteEncontrado['valor'] * $qtd, 2, ',', '.') ?></p>
 
                 <!-- NOVAS INFORMAÇÕES -->
-                <p><strong>Data de início:</strong> <?= date('d/m/Y', strtotime($dataInicio)) ?></p>
-                <p><strong>Data de término:</strong> <?= date('d/m/Y', strtotime($dataFim)) ?></p>
+                <p><strong>Data de início:</strong> <?= !empty($dataInicio) ? date('d/m/Y', strtotime($dataInicio)) : 'Não informada' ?></p>
+                <p><strong>Data de término:</strong> <?= !empty($dataFim) ? date('d/m/Y', strtotime($dataFim)) : 'Não informada' ?></p>
 
                 <?php if (!empty($observacoes)): ?>
                     <p><strong>Observações:</strong><br>
@@ -95,7 +101,7 @@ if ($pacoteEncontrado) {
         <!-- se nem encontrou o pacote  -->
         <div class="alert alert-danger shadow">
             <h4>Erro Fatal</h4>
-            <p>O pacote selecionado não foi encontrado no nosso sistema.</p>
+            <p>O pacote selecionado não foi encontrado no nosso sistema ou a sessão expirou.</p>
             <a href="../index.php" class="btn btn-danger">Voltar ao Início</a>
         </div>
     <?php endif; ?>
