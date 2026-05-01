@@ -62,7 +62,7 @@ require 'requires/header.php';
 <div class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6"> 
-            <img src="./img/PessoasFazendoTurismo.jpeg" class="d-block mx-lg-auto img-fluid rounded" alt="Mulher apreciando uma vista" width="700" height="500" loading="lazy">
+            <img src="img/PessoasFazendoTurismo.jpeg" class="d-block mx-lg-auto img-fluid rounded" alt="Mulher apreciando uma vista" width="700" height="500" loading="lazy">
         </div>
         <div class="col-lg-6">
             <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Transforme sua viagem com a nossa agência</h1>
@@ -128,7 +128,7 @@ require 'requires/header.php';
         <!-- Avaliação 1 -->
         <div class="col-md-4">
             <div class="card h-100 shadow-lg border-0 text-center p-4">
-                <img src="./img/mulherAvaliacao.jpg" alt="Cliente 1" class="rounded-circle mx-auto mb-3" width="130" height="130">
+                <img src="img/mulherAvaliacao.jpg" alt="Cliente 1" class="rounded-circle mx-auto mb-3" width="130" height="130">
                 <h5 class="card-title fw-bold">Maria Silva</h5>
                 <p class="card-text text-muted">"Experiência incrível! A agência cuidou de cada detalhe da minha viagem. Voltarei com certeza!"</p>
             </div>
@@ -137,7 +137,7 @@ require 'requires/header.php';
         <!-- Avaliação 2 -->
         <div class="col-md-4">
             <div class="card h-100 shadow-lg border-0 text-center p-4">
-                <img src="./img/homemAvaliacao2.jpg" alt="Cliente 2" class="rounded-circle mx-auto mb-3" width="130" height="130">
+                <img src="img/homemAvaliacao2.jpg" alt="Cliente 2" class="rounded-circle mx-auto mb-3" width="130" height="130">
                 <h5 class="card-title fw-bold">João Santos</h5>
                 <p class="card-text text-muted">"Profissionais muito atenciosos. Minha família inteira aproveitou bastante a viagem sem preocupações."</p>
             </div>
@@ -146,7 +146,7 @@ require 'requires/header.php';
         <!-- Avaliação 3 -->
         <div class="col-md-4">
             <div class="card h-100 shadow-lg border-0 text-center p-4">
-                <img src="./img/homemAvaliacao3.jpg" alt="Cliente 3" class="rounded-circle mx-auto mb-3" width="130" height="130">
+                <img src="img/homemAvaliacao3.jpg" alt="Cliente 3" class="rounded-circle mx-auto mb-3" width="130" height="130">
                 <h5 class="card-title fw-bold">Ana Costa</h5>
                 <p class="card-text text-muted">"Melhor agência que já usei! Pacotes com ótimo custo-benefício e atendimento de primeira qualidade."</p>
             </div>
