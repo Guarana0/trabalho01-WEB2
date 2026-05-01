@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <!-- IMAGEM -->
     <div class="col-md-6">
-      <img src="../imagens/<?= htmlspecialchars($pacote['imagem']) ?>" 
+      <img src="../img/<?= htmlspecialchars($pacote['imagem']) ?>" 
            class="img-fluid rounded">
     </div>
 

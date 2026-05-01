@@ -17,25 +17,25 @@ require 'requires/header.php';
             <div class="carousel-inner">
 
                 <div class="carousel-item active">
-                    <img src="imagens/Salvador_img.jpg" 
+                    <img src="img/Salvador_img.jpg" 
                          class="d-block w-100" 
                          style="height: 500px; object-fit: cover; border-radius: 10px;">
                 </div>
 
                 <div class="carousel-item">
-                    <img src="imagens/Rio_img.jpg" 
+                    <img src="img/Rio_img.jpg" 
                          class="d-block w-100" 
                          style="height: 500px; object-fit: cover; border-radius: 10px;">
                 </div>
 
                 <div class="carousel-item">
-                    <img src="imagens/Amazonas_img.jpg" 
+                    <img src="img/Amazonas_img.jpg" 
                          class="d-block w-100" 
                          style="height: 500px; object-fit: cover; border-radius: 10px;">
                 </div>
 
                 <div class="carousel-item">
-                    <img src="imagens/Gramado_img.jpg" 
+                    <img src="img/Gramado_img.jpg" 
                          class="d-block w-100" 
                          style="height: 500px; object-fit: cover; border-radius: 10px;">
                 </div>
