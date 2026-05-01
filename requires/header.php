@@ -1,14 +1,15 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabalho web Agência de Turismo</title>
+    <title>Agência de Turismo - Cefetur</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 
     <!-- Degradê personalizado -->
     <style>
@@ -20,15 +21,12 @@
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark degrade-navbar py-5 shadow">
+<nav class="navbar navbar-expand-lg navbar-dark degrade-navbar py-2 shadow">
   <div class="container">
     
     <!-- Logo e o nome da empresa agora se chama CEFETUR -->
    <a class="navbar-brand d-flex align-items-center fw-bold" href="index.php">
-  <img src="imagens/logo.png" 
-       alt="Cefetur" 
-       width="90" height="90"
-       class="me-3 rounded-circle object-fit-cover">
+  <img src="img/cefet.png" alt="Cefetur" width="90" height="90" class="me-3">
 
   <span style="font-size: 32px; letter-spacing: 1px; color: #f8f9fa;">
     CEFETUR
@@ -42,26 +40,22 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5">
         
         <li class="nav-item">
-          <a class="nav-link active" href="../index.php">Início</a>
+          <a class="nav-link active" href="./index.php">Início</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">Destinos</a>
+          <a class="nav-link" href="./pacotes.php">Pacotes</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">Pacotes</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contato</a>
+          <a class="nav-link" href="./contato.html">Contato</a>
         </li>
 <!--vamos troca-los futuramente mas serve de exemplo-->
       </ul>
     
 
       <!-- Botão para reservar um pacote -->
-      <a href="#" class="btn btn-light ms-lg-3 fw-semibold px-4 py-2">
+      <a href="./pacotes.php" class="btn btn-light ms-lg-3 fw-semibold px-4 py-2">
         Reservar agora
       </a>
 
