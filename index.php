@@ -161,6 +161,32 @@ require 'requires/header.php';
         <p class="lead text-muted">Escolha um de nossos pacotes e comece sua aventura</p>
     </div>
     
+    <div class="row g-4 justify-content-center">
+        <?php foreach ($pacotes as $pacote) {
+            // Condição: só mostra se tem disponibilidade
+            if ($pacote['disponivel'] > 0) {
+        ?>
+        <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-lg border-0">
+                <img src="img/<?= htmlspecialchars($pacote['imagem']) ?>" alt="pacote" class="card-img-top" height="250" style="object-fit: cover;">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-bold"><?= htmlspecialchars($pacote['nome']) ?></h5>
+                    <p class="card-text text-muted flex-grow-1"><?= htmlspecialchars($pacote['descricao']) ?></p>
+                    
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="badge bg-success">Disponível</span>
+                        <span class="fw-bold text-success">R$ <?= number_format($pacote['valor'], 2, ',', '.') ?></span>
+                    </div>
+
+                    <a href="paginas/detalhes.php?id=<?= $pacote['id'] ?>" class="btn btn-primary mt-3 w-100">Ver Detalhes</a>
+                </div>
+            </div>
+        </div>
+        <?php 
+            }
+        } 
+        ?>
+    </div>
 
     <!-- Botão Ver Mais Pacotes -->
     <div class="text-center mt-5">
