@@ -11,10 +11,10 @@ require 'requires/header.php';
 
   <h2 class="mb-4">Filtrar por categoria</h2>
 
-  <a href="index.php" class="btn btn-outline-dark m-1">Todos</a>
-  <a href="index.php?categoria=praia" class="btn btn-outline-primary m-1">Praia</a>
-  <a href="index.php?categoria=cidade" class="btn btn-outline-primary m-1">Cidade</a>
-  <a href="index.php?categoria=natureza" class="btn btn-outline-primary m-1">Natureza</a>
+  <a href="pacotes.php" class="btn btn-outline-dark m-1">Todos</a>
+  <a href="pacotes.php?categoria=praia" class="btn btn-outline-primary m-1">Praia</a>
+  <a href="pacotes.php?categoria=cidade" class="btn btn-outline-primary m-1">Cidade</a>
+  <a href="pacotes.php?categoria=natureza" class="btn btn-outline-primary m-1">Natureza</a>
 
 </div>
 

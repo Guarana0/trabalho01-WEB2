@@ -48,7 +48,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="./contato.html">Contato</a>
+          <a class="nav-link" href="./contato.php">Contato</a>
         </li>
 <!--vamos troca-los futuramente mas serve de exemplo-->
       </ul>
