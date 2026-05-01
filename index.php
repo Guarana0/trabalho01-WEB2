@@ -4,34 +4,118 @@ require_once 'dados.php';
 
 require 'requires/header.php';
 
-
 ?>
 
-<div class="container mt-4 text-center">
-
-  <h2 class="mb-4">Filtrar por categoria</h2>
-
-  <a href="index.php" class="btn btn-outline-dark m-1">Todos</a>
-  <a href="index.php?categoria=praia" class="btn btn-outline-primary m-1">Praia</a>
-  <a href="index.php?categoria=cidade" class="btn btn-outline-primary m-1">Cidade</a>
-  <a href="index.php?categoria=natureza" class="btn btn-outline-primary m-1">Natureza</a>
-
-</div>
-
-<div class="container mt-5">
-    <h2 class="text-center mb-5">Pacotes de Viagem</h2>
-    <div class="row g-4">
-        <?php
-        $filtro = $_GET['categoria'] ?? 'todos';
-
-        foreach ($pacotes as $pacote) {
-            $categoriasDoPacote = (array) $pacote['categoria'];
-            
-            if ($filtro === 'todos' || in_array($filtro, $categoriasDoPacote)) {
-                // Chama a função que agora já sabe mostrar se está esgotado
-                mostrarPacote($pacote); 
-            }
-        }
-        ?>
+<!-- Introdução da empresa !-->
+<div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div class="col-10 col-sm-8 col-lg-6"> 
+            <img src="./img/mulher_feliz.jpg" class="d-block mx-lg-auto img-fluid" alt="Mulher apreciando uma vista" width="700" height="500" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+            <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Transforme sua viagem com a nossa agência</h1>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident nam velit et! Obcaecati eum fugiat debitis labore minima blanditiis, rem, eveniet deserunt quos unde adipisci optio nemo ad animi odio.</p>
+        </div>
     </div>
 </div>
+
+<!-- Seção de Motivos para Escolher -->
+<div class="container py-5 bg-light">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="text-center mb-5">
+                <h2 class="display-6 fw-bold text-body-emphasis">Por que escolher a CEFETUR?</h2>
+                <p class="lead text-muted">Veja os motivos que nos tornam a melhor agência de turismo</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <!-- Motivo 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="text-center p-4 rounded">
+                        <div class="mb-3">
+                            <i class="bi bi-shield-check" style="font-size: 3rem; color: #67a8fd;"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">100% Seguro</h5>
+                        <p class="text-muted">Suas viagens protegidas com as melhores práticas de segurança e atendimento profissional garantido.</p>
+                    </div>
+                </div>
+
+                <!-- Motivo 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="text-center p-4 rounded">
+                        <div class="mb-3">
+                            <i class="bi bi-cash-coin" style="font-size: 3rem; color: #67a8fd;"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">Melhor Preço</h5>
+                        <p class="text-muted">Pacotes com o melhor custo-benefício do mercado. Compare e comprove nossas ofertas incomparáveis.</p>
+                    </div>
+                </div>
+
+                <!-- Motivo 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="text-center p-4 rounded">
+                        <div class="mb-3">
+                            <i class="bi bi-headset" style="font-size: 3rem; color: #67a8fd;"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">Atendimento 24/7</h5>
+                        <p class="text-muted">Nossa equipe está sempre disponível para esclarecer dúvidas e resolver problemas a qualquer hora.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Seção de Avaliações -->
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h2 class="display-6 fw-bold text-body-emphasis">O que nossos clientes dizem</h2>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+        <!-- Avaliação 1 -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-lg border-0 text-center p-4">
+                <img src="./img/mulherAvaliacao.jpg" alt="Cliente 1" class="rounded-circle mx-auto mb-3" width="130" height="130">
+                <h5 class="card-title fw-bold">Maria Silva</h5>
+                <p class="card-text text-muted">"Experiência incrível! A agência cuidou de cada detalhe da minha viagem. Voltarei com certeza!"</p>
+            </div>
+        </div>
+
+        <!-- Avaliação 2 -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-lg border-0 text-center p-4">
+                <img src="./img/homemAvaliacao2.jpg" alt="Cliente 2" class="rounded-circle mx-auto mb-3" width="130" height="130">
+                <h5 class="card-title fw-bold">João Santos</h5>
+                <p class="card-text text-muted">"Profissionais muito atenciosos. Minha família inteira aproveitou bastante a viagem sem preocupações."</p>
+            </div>
+        </div>
+
+        <!-- Avaliação 3 -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-lg border-0 text-center p-4">
+                <img src="./img/homemAvaliacao3.jpg" alt="Cliente 3" class="rounded-circle mx-auto mb-3" width="130" height="130">
+                <h5 class="card-title fw-bold">Ana Costa</h5>
+                <p class="card-text text-muted">"Melhor agência que já usei! Pacotes com ótimo custo-benefício e atendimento de primeira qualidade."</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Seção de Pacotes Destacados -->
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h2 class="display-6 fw-bold text-body-emphasis">Nossos Pacotes em Destaque</h2>
+        <p class="lead text-muted">Escolha um de nossos pacotes e comece sua aventura</p>
+    </div>
+    
+
+    <!-- Botão Ver Mais Pacotes -->
+    <div class="text-center mt-5">
+        <a href="./pacotes.php" class="btn btn-outline-primary btn-lg px-5 py-3">
+            <i class="bi bi-arrow-right me-2"></i>Ver Todos os Pacotes
+        </a>
+    </div>
+</div>
+
+<?php require 'requires/footer.php'; ?>
