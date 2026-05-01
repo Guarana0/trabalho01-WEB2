@@ -8,7 +8,7 @@ $pacotes = array (
     'descricao' => 'Vou adicionar alguma descricao depois...',
     'valor' => 1200,
     'imagem' => 'Salvador_img.jpg',
-    'disponivel' => 1,
+    'disponivel' => 0,
     'categoria' => 
     array (
       0 => 'cidade',
@@ -22,7 +22,7 @@ $pacotes = array (
     'descricao' => 'Vou adicionar alguma descricao depois...',
     'valor' => 1500,
     'imagem' => 'Rio_img.jpg',
-    'disponivel' => 5,
+    'disponivel' => 4,
     'categoria' => 
     array (
       0 => 'cidade',

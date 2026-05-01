@@ -1,6 +1,8 @@
 <?php
+session_start(); // Inicia a sessão para transportar os dados do POST
 require '../dados.php';
-require '../requires/header.php';
+
+// --- A lógica de redirecionamento e dados deve vir ANTES do header.php ---
 
 $id = $_GET['id'] ?? null;
 
@@ -13,12 +15,6 @@ foreach ($pacotes as $p) {
   }
 }
 
-if (!$pacote) {
-  echo "<div class='container mt-5'><h3>Pacote não encontrado</h3></div>";
-  require '../requires/footer.php';
-  exit;
-}
-
 // VARIÁVEIS DE CONTROLE
 $erroData = "";
 $dados = $_POST ?? [];
@@ -26,7 +22,6 @@ $dados = $_POST ?? [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $inicio = $_POST['data_inicio'] ?? '';
   $fim = $_POST['data_fim'] ?? '';
-
 
   #esse if é composto por 2 partes primeiro ele garante que o inicio e o fim existem
   #Depois ele verifica se a data inicial é maior q a final 
@@ -36,6 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     #se estiver tudo ok e a datade inicio for menor que a data do fim o formulario direciona o usuario
     #para a pagina de resultado 
 
+    // Salvamos os dados na sessão para que resultado.php possa ler
+    $_SESSION['dados_reserva'] = $_POST;
+
     //header() é uma função do PHP que envia instruções (cabeçalhos HTTP) para o navegador.
     //E um redirecionamento automatico 
     header("Location: resultado.php");
@@ -43,6 +41,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //Evita que o resto da página continue executando
     exit;
   }
+}
+
+// --- Agora que a lógica de cabeçalho terminou, podemos carregar o visual ---
+require '../requires/header.php';
+
+if (!$pacote) {
+  echo "<div class='container mt-5'><h3>Pacote não encontrado</h3></div>";
+  require '../requires/footer.php';
+  exit;
 }
 ?>
 
@@ -76,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       <hr>
 
-      <!-- ERRO -->
+      <!-- Erro na data -->
       <?php if (!empty($erroData)): ?>
         <div class="alert alert-danger">
           <?= $erroData ?>
