@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -40,7 +42,7 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5">
         
         <li class="nav-item">
-          <a class="nav-link active" href="index.php">Início</a>
+          <a class="nav-link active" href="../index.php">Início</a>
         </li>
 
         <li class="nav-item">
@@ -66,6 +68,7 @@
     </div>
   </div>
 </nav>
+
 
 </body>
 </html>
