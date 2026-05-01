@@ -5,6 +5,58 @@ require_once 'dados.php';
 require 'requires/header.php';
 
 ?>
+<!--Carrosel peguei um modelo pronto do proprio bootstrap e apenas
+ personalizei algumas caracteristicas que eu julqguei necessario-->
+
+<div class="container-fluid mt-4">
+
+    <div style="max-width: 1300px; margin: auto;">
+
+        <div id="carouselSimples" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="imagens/Salvador_img.jpg" 
+                         class="d-block w-100" 
+                         style="height: 500px; object-fit: cover; border-radius: 10px;">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="imagens/Rio_img.jpg" 
+                         class="d-block w-100" 
+                         style="height: 500px; object-fit: cover; border-radius: 10px;">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="imagens/Amazonas_img.jpg" 
+                         class="d-block w-100" 
+                         style="height: 500px; object-fit: cover; border-radius: 10px;">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="imagens/Gramado_img.jpg" 
+                         class="d-block w-100" 
+                         style="height: 500px; object-fit: cover; border-radius: 10px;">
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselSimples" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselSimples" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
 
 <!-- Introdução da empresa !-->
 <div class="container col-xxl-8 px-4 py-5">
