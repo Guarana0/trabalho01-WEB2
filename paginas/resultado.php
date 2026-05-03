@@ -73,7 +73,7 @@ if ($pacoteEncontrado) {
                 <p><strong>Vagas reservadas:</strong> <?= $qtd ?></p>
                 <p><strong>Valor Total:</strong> R$ <?= number_format($pacoteEncontrado['valor'] * $qtd, 2, ',', '.') ?></p>
 
-                <!-- NOVAS INFORMAÇÕES -->
+                <!--aqui eu coloquei as informacoes da data de inicio e da de termino -->
                 <p><strong>Data de início:</strong> <?= !empty($dataInicio) ? date('d/m/Y', strtotime($dataInicio)) : 'Não informada' ?></p>
                 <p><strong>Data de término:</strong> <?= !empty($dataFim) ? date('d/m/Y', strtotime($dataFim)) : 'Não informada' ?></p>
 
