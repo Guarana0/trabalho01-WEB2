@@ -22,7 +22,7 @@ $pacotes = array (
     'descricao' => 'Se aventure no lugar em que o mar e a montanha se encontram. Da vista monumental do Cristo Redentor às belas águas do Oceano Atlântico, bem como o histórico Pão de Açúcar.',
     'valor' => 1500,
     'imagem' => 'Rio_img.jpg',
-    'disponivel' => 4,
+    'disponivel' => 5,
     'categoria' => 
     array (
       0 => 'cidade',

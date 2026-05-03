@@ -1,10 +1,9 @@
 <?php
-session_start(); // Inicia a sessão para ler os dados vindos de detalhes.php
 require_once '../dados.php';
 require_once '../requires/header.php';
 
-// Recuperamos os dados da sessão
-$dadosSessao = $_SESSION['dados_reserva'] ?? [];
+// Recuperamos os dados diretamente do POST (vindo do formulário em detalhes.php)
+$dadosSessao = $_POST ?? []; 
 
 $idBuscado   = $dadosSessao['id'] ?? null;
 $nomeUsuario = $dadosSessao['nome'] ?? 'Cliente';
@@ -62,7 +61,7 @@ if ($pacoteEncontrado) {
 
         $valorTotal = $valorBase + $taxaExtra;
 
-        //so altera dados.php e confdirma se a data for válida
+        //so altera dados.php e confirma se a data for válida
         if ($dataValida) {
             foreach ($pacotes as $indice => $p) {
                 if ($p['id'] == $idBuscado) {
@@ -79,7 +78,7 @@ if ($pacoteEncontrado) {
             $reservaConfirmada = true;
             
             // Evita reservas duplicadas
-            unset($_SESSION['dados_reserva']);
+            // unset($_SESSION['dados_reserva']); // Removido: Não é mais necessário com POST
         } else {
             $reservaConfirmada = false; // caso a data falhar, nao mostra sucesso
         }
@@ -138,7 +137,7 @@ if ($pacoteEncontrado) {
         <!-- se nem encontrou o pacote  -->
         <div class="alert alert-danger shadow">
             <h4>Erro Fatal</h4>
-            <p>O pacote selecionado não foi encontrado no nosso sistema ou a sessão expirou.</p>
+            <p>O pacote selecionado não foi encontrado no nosso sistema ou o formulário não foi enviado corretamente.</p>
             <a href="../index.php" class="btn btn-danger">Voltar ao Início</a>
         </div>
     <?php endif; ?>
