@@ -94,7 +94,9 @@ if ($pacoteEncontrado) {
             <h4><i class="bi bi-exclamation-triangle"></i> Ops! Problema no estoque</h4>
             <p><?= $erroEstoque ?></p>
             <hr>
-            <a href="javascript:history.back()" class="btn btn-warning">Voltar e Corrigir</a>
+          <a href="<?= $_SERVER['HTTP_REFERER'] ?? 'index.php' ?>" class="btn btn-warning">
+    Voltar e Corrigir
+</a>
         </div>
 
     <?php else: ?>

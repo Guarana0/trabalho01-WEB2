@@ -46,7 +46,7 @@ $pacotes = array (
     'descricao' => 'Vou adicionar alguma descricao depois...',
     'valor' => 2000,
     'imagem' => 'Gramado_img.jpg',
-    'disponivel' => 5,
+    'disponivel' => 4,
     'categoria' => 'cidade',
   ),
 );
