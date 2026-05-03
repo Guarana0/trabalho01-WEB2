@@ -66,7 +66,11 @@ require 'requires/header.php';
         </div>
         <div class="col-lg-6">
             <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Transforme sua viagem com a nossa agência</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident nam velit et! Obcaecati eum fugiat debitis labore minima blanditiis, rem, eveniet deserunt quos unde adipisci optio nemo ad animi odio.</p>
+            <p class="lead">Sua jornada começa aqui. Somos uma agência de viagens criada
+                 para transformar sonhos em experiências inesquecíveis, oferecendo destinos incríveis, preços acessíveis 
+                 e um atendimento de qualidade. <br>
+     Do litoral ao interior, da aventura ao descanso, a CEFETUR conecta você aos 
+melhores lugares do Brasil com praticidade, segurança e conforto.</p>
         </div>
     </div>
 </div>
@@ -146,7 +150,7 @@ require 'requires/header.php';
         <!-- Avaliação 3 -->
         <div class="col-md-4">
             <div class="card h-100 shadow-lg border-0 text-center p-4">
-                <img src="img/homemAvaliacao3.jpg" alt="Cliente 3" class="rounded-circle mx-auto mb-3" width="130" height="130">
+                <img src="img/mulherAvaliacao2r.jpg" alt="Cliente 3" class="rounded-circle mx-auto mb-3" width="130" height="130">
                 <h5 class="card-title fw-bold">Ana Costa</h5>
                 <p class="card-text text-muted">"Melhor agência que já usei! Pacotes com ótimo custo-benefício e atendimento de primeira qualidade."</p>
             </div>

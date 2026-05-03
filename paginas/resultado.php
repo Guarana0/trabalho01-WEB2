@@ -109,7 +109,7 @@ if ($pacoteEncontrado) {
                     <p class="small text-danger">*Inclui taxa extra de R$ <?= number_format($taxaExtra, 2, ',', '.') ?> por estadia longa</p>
                 <?php endif; ?>
 
-                <!-- NOVAS INFORMAÇÕES -->
+                <!--aqui eu coloquei as informacoes da data de inicio e da de termino -->
                 <p><strong>Data de início:</strong> <?= !empty($dataInicio) ? date('d/m/Y', strtotime($dataInicio)) : 'Não informada' ?></p>
                 <p><strong>Data de término:</strong> <?= !empty($dataFim) ? date('d/m/Y', strtotime($dataFim)) : 'Não informada' ?></p>
 
@@ -130,7 +130,9 @@ if ($pacoteEncontrado) {
             <h4><i class="bi bi-exclamation-triangle"></i> Ops! Problema no estoque</h4>
             <p><?= $erroEstoque ?></p>
             <hr>
-            <a href="javascript:history.back()" class="btn btn-warning">Voltar e Corrigir</a>
+          <a href="<?= $_SERVER['HTTP_REFERER'] ?? 'index.php' ?>" class="btn btn-warning">
+    Voltar e Corrigir
+</a>
         </div>
 
     <?php else: ?>

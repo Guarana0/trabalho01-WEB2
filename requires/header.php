@@ -25,8 +25,8 @@
   <div class="container">
     
     <!-- Logo e o nome da empresa agora se chama CEFETUR -->
-   <a class="navbar-brand d-flex align-items-center fw-bold" href="index.php">
-  <img src="img/cefet.png" alt="Cefetur" width="90" height="90" class="me-3">
+   <a class="navbar-brand d-flex align-items-center fw-bold" href="/trabalho01-WEB2/index.php">
+  <img src="/trabalho01-WEB2/img/cefet.png" alt="Cefetur" width="90" height="90" class="me-3">
 
   <span style="font-size: 32px; letter-spacing: 1px; color: #f8f9fa;">
     CEFETUR
@@ -37,21 +37,22 @@
     <div class="collapse navbar-collapse" id="menu">
       
       <!-- Links da nav bar -->
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5">
-        
-        <li class="nav-item">
-          <a class="nav-link active" href="./index.php">Início</a>
-        </li>
+      <!-- Links da nav bar -->
+<ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-5">
+  
+  <li class="nav-item">
+    <a class="nav-link active" href="/trabalho01-WEB2/index.php">Início</a>
+  </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="./pacotes.php">Pacotes</a>
-        </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/trabalho01-WEB2/pacotes.php">Pacotes</a>
+  </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="./contato.php">Contato</a>
-        </li>
-<!--vamos troca-los futuramente mas serve de exemplo-->
-      </ul>
+  <li class="nav-item">
+    <a class="nav-link" href="/trabalho01-WEB2/contato.php">Contato</a>
+  </li>
+
+</ul>
     
 
       <!-- Botão para reservar um pacote -->

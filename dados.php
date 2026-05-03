@@ -46,7 +46,7 @@ $pacotes = array (
     'descricao' => 'A sofisticada Serra Gaúcha em um destino planejado para o conforto. Sendo referência em hospitalidade, Gramado une o clima de montanha a uma infraestrutura de altíssimo padrão e gastronomia influenciada pelos imigrantes europeus.',
     'valor' => 2000,
     'imagem' => 'Gramado_img.jpg',
-    'disponivel' => 5,
+    'disponivel' => 4,
     'categoria' => 'cidade',
   ),
   4 => 
