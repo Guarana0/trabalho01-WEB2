@@ -19,6 +19,9 @@ $observacoes = $dadosSessao['observacoes'] ?? '';
 $pacoteEncontrado = null;
 $reservaConfirmada = false;
 $erroEstoque = "";
+$taxaExtra = 0;   
+$valorTotal = 0;  
+$diferencaDias = 0;
 
 // isso busca o pacote no array 
 if ($idBuscado && isset($pacotes)) {
@@ -32,31 +35,61 @@ if ($idBuscado && isset($pacotes)) {
 
 //isso é para realmente alterar o arquivo dados.php
 if ($pacoteEncontrado) {
-    //verifica se a quantidade é válida em relação ao estoque
+    // ve o estoque
     if ($qtd > 0 && $qtd <= $pacoteEncontrado['disponivel']) {
+
+        $dataValida = true; // assume que a data eh valida
+        $valorBase = $pacoteEncontrado['valor'] * $qtd;
         
-        // se sim atualiza o array pacotes
-        foreach ($pacotes as $indice => $p) {
-            if ($p['id'] == $idBuscado) {
-                $pacotes[$indice]['disponivel'] -= $qtd;
-                // aqui atualiza a referencia local 
-                $pacoteEncontrado['disponivel'] = $pacotes[$indice]['disponivel'];
-                break;
+        // calcula taxas
+        if (!empty($dataInicio) && !empty($dataFim)) {
+            $d1 = new DateTime($dataInicio);
+            $d2 = new DateTime($dataFim);
+
+            if ($d1 > $d2) {
+                $erroEstoque = "A data de término não pode ser anterior à data de início.";
+                $dataValida = false; 
+            } else {
+                $intervalo = $d1->diff($d2);
+                $diferencaDias = $intervalo->days;
+
+                if ($diferencaDias > 7) {
+                    $diasExtras = $diferencaDias - 7;
+                    $taxaExtra = $diasExtras * 100;
+                }
             }
         }
 
-        // Aqui sobreescreve o dados.php
-        $conteudo = "<?php\n\n\$pacotes = " . var_export($pacotes, true) . ";\n?>";
-        file_put_contents('../dados.php', $conteudo);
-        
-        $reservaConfirmada = true;
-        
-        // Limpa a sessão após o sucesso para evitar reservas duplicadas ao atualizar a página
-        unset($_SESSION['dados_reserva']);
+        $valorTotal = $valorBase + $taxaExtra;
+
+        //so altera dados.php e confdirma se a data for válida
+        if ($dataValida) {
+            foreach ($pacotes as $indice => $p) {
+                if ($p['id'] == $idBuscado) {
+                    $pacotes[$indice]['disponivel'] -= $qtd;
+                    $pacoteEncontrado['disponivel'] = $pacotes[$indice]['disponivel'];
+                    break;
+                }
+            }
+
+            // sobreescrita dados.php
+            $conteudo = "<?php\n\n\$pacotes = " . var_export($pacotes, true) . ";\n?>";
+            file_put_contents('../dados.php', $conteudo);
+            
+            $reservaConfirmada = true;
+            
+            // Evita reservas duplicadas
+            unset($_SESSION['dados_reserva']);
+        } else {
+            $reservaConfirmada = false; // caso a data falhar, nao mostra sucesso
+        }
+
     } else {
         $erroEstoque = "Quantidade solicitada ($qtd) indisponível. Temos apenas {$pacoteEncontrado['disponivel']} vagas.";
+        $reservaConfirmada = false;
     }
 }
+
 ?>
 
 <div class="container mt-5">
@@ -71,7 +104,11 @@ if ($pacoteEncontrado) {
                 <p>Sua viagem para <strong><?= htmlspecialchars($pacoteEncontrado['nome']) ?></strong> está garantida.</p>
                 <hr>
                 <p><strong>Vagas reservadas:</strong> <?= $qtd ?></p>
-                <p><strong>Valor Total:</strong> R$ <?= number_format($pacoteEncontrado['valor'] * $qtd, 2, ',', '.') ?></p>
+                <p><strong>Valor Total:</strong> R$ <?= number_format($valorTotal, 2, ',', '.') ?></p>
+
+                <?php if ($taxaExtra > 0): ?>
+                    <p class="small text-danger">*Inclui taxa extra de R$ <?= number_format($taxaExtra, 2, ',', '.') ?> por estadia longa</p>
+                <?php endif; ?>
 
                 <!--aqui eu coloquei as informacoes da data de inicio e da de termino -->
                 <p><strong>Data de início:</strong> <?= !empty($dataInicio) ? date('d/m/Y', strtotime($dataInicio)) : 'Não informada' ?></p>

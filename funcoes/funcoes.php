@@ -4,7 +4,7 @@ function mostrarPacote($pacote) {
     ?>
     <div class="col-md-4 mb-4">
         <div class="card h-100 shadow-sm">
-            <img src="imagens/<?= $pacote['imagem'] ?>" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <img src="img/<?= $pacote['imagem'] ?>" class="card-img-top" style="height: 200px; object-fit: cover;">
             
             <div class="card-body d-flex flex-column"> <h5 class="card-title" style="min-height: 50px;"><?= $pacote['nome'] ?></h5>
                 
