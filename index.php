@@ -150,7 +150,7 @@ melhores lugares do Brasil com praticidade, segurança e conforto.</p>
         <!-- Avaliação 3 -->
         <div class="col-md-4">
             <div class="card h-100 shadow-lg border-0 text-center p-4">
-                <img src="img/homemAvaliacao3.jpg" alt="Cliente 3" class="rounded-circle mx-auto mb-3" width="130" height="130">
+                <img src="img/mulherAvaliacao2r.jpg" alt="Cliente 3" class="rounded-circle mx-auto mb-3" width="130" height="130">
                 <h5 class="card-title fw-bold">Ana Costa</h5>
                 <p class="card-text text-muted">"Melhor agência que já usei! Pacotes com ótimo custo-benefício e atendimento de primeira qualidade."</p>
             </div>

@@ -11,28 +11,27 @@
       </div>
 
       <!-- Links do footer (padrão) ja veio junto apenas adaptei  -->
-      <div class="col-md-4">
-        <h5>Links</h5>
-        <ul class="list-unstyled">
-          <li><a href="../index.php" class="text-white text-decoration-none">Início</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Destinos</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Pacotes</a></li>
-          <li><a href="#" class="text-white text-decoration-none">Contato</a></li>
-        </ul>
-      </div>
+     <div class="col-md-4">
+  <h5>Links</h5>
+  <ul class="list-unstyled">
+    <li><a href="/trabalho01-WEB2/index.php" class="text-white text-decoration-none">Início</a></li>
+    <li><a href="/trabalho01-WEB2/pacotes.php" class="text-white text-decoration-none">Pacotes</a></li>
+    <li><a href="/trabalho01-WEB2/contato.php" class="text-white text-decoration-none">Contato</a></li>
+  </ul>
+</div>
 
       <!-- Aba de contatos padrão de footer ,completar futuramente  -->
       <div class="col-md-4">
         <h5>Contato</h5>
-        <p>Email: EMAIL IMAGINARIO DA AGENCIA @GMAIL.COM</p>
-        <p>Telefone: (31) 00000000</p>
+        <p>Email: cefetur@gmail.com</p>
+        <p>Telefone: (31) 1234567898</p>
       </div>
 
     </div>
   </div>
 
   <div class="text-center p-3 bg-secondary">
-    © 2026 Agência de Turismo (por enquanto sem nome)
+    © 2026 Agência de Turismo CEFETUR
   </div>
 
 </footer>
