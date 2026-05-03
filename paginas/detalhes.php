@@ -1,7 +1,7 @@
 <?php
 require '../dados.php';
 
-// --- A lógica de redirecionamento e dados deve vir ANTES do header.php ---
+// --- A lógica de redirecionamento e dados antes do header.php ---
 
 $id = $_GET['id'] ?? null;
 
@@ -22,7 +22,8 @@ $dados = $_GET ?? [];
 require '../requires/header.php';
 
 if (!$pacote) {
-  echo "<div class='container mt-5'><h3>Pacote não encontrado</h3></div>";
+  
+  echo "<div class='container mt-5' style='min-height: 50vh;'><h3>Pacote não encontrado!</h3></div>";
   require '../requires/footer.php';
   exit;
 }

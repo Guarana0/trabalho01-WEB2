@@ -8,7 +8,7 @@ $pacotes = array (
     'descricao' => 'Mergulhe na essência baiana! O epicentro cultural brasileiro, que reverencia a herança afro-brasileira nas ladeiras do Centro Histórico, unindo a arquitetura colonial preservada. Explore também as águas da Baía de Todos-os-Santos, que banham a histórica Ribeira, até a orla oceânica do Rio Vermelho e Itapuã.',
     'valor' => 1200,
     'imagem' => 'Salvador_img.jpg',
-    'disponivel' => 0,
+    'disponivel' => 1,
     'categoria' => 
     array (
       0 => 'cidade',
@@ -66,7 +66,7 @@ $pacotes = array (
     'descricao' => 'Testemuhe um dos maiores espetáculos naturais da Terra. Um destino que fascina pela enorme força das águas e a vasta diversidade da Mata Atlântica, é ideal para quem busca contemplação e experiências sensoriais marcantes.',
     'valor' => 2500,
     'imagem' => 'fozdoiguacu_img.jpg',
-    'disponivel' => 15,
+    'disponivel' => 12,
     'categoria' => 'natureza',
   ),
 );
